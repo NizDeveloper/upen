@@ -1,0 +1,56 @@
+La empresa de manufactura "ACME", necesita un nuevo control para gestionar su inventario por el área correspondiente, últimamente el turno de la tarde parece "multiplicar" la producción por las noches cuando sale el supervisor, lo cual ha generado pérdidas en la empresa.
+
+Ahora, necesitan añadir accesos para registrar la producción diaria, para ello necesitan un sistema protegido por contraseña de al menos 6 caracteres, de 3 letras, al menos 1 mayúsculas y 3 números que no sean consecutivos. Deberá poner un mensaje que diga que se debe llamar al supervisor si la contraseña es incorrecta, de lo contrario, deberá mostrar un mensaje de bienvenida.
+
+Una vez ingresado el sistema, deberá poder registrar las piezas fabricadas, para ello, el sistema deberá pedir la cantidad de piezas que se quieren añadir y permitir el registro, el supervisor deberá poder ingresar todas las piezas que requiera y para terminar el ingreso deberá ingresar 4 ceros consecutivos.
+
+Al terminar, deberá mostrar la suma total de las piezas fabricadas, si el total de esas ventas es mayor a 10,000 unidades deberá mostrar un mensaje de que se ha cumplido la meta, de lo contrario, deberá mostrar una alerta para producción.
+
+-----------------------------------
+
+Algoritmo while_1
+	Escribir "Ingrese la contraseña"
+	leer contraseña
+	
+	Mientras contraseña <> "Niz360" Hacer
+		Escribir "Contraseña incorrecta, ingrese la contraseña"
+		leer contraseña
+	FinMientras
+	
+	piezas = 1
+	
+	Mientras piezas <> 0000 Hacer
+		Escribir "Cantidad de piezas que quiere añadir: (0000 para salir)"
+		leer piezas
+		
+		total_piezas = total_piezas + piezas
+	FinMientras
+	
+	total_piezas = total_piezas - 1
+	
+	si total_piezas > 10000 Entonces
+		Escribir "La meta se a completado con ", total_piezas, " piezas vendidas"
+	SiNo
+		Escribir "Alerta en la producción"
+	FinSi
+FinAlgoritmo
+
+--------------------------------
+
+*** Ejecución Iniciada. ***
+Ingrese la contraseña
+> Niz360
+Cantidad de piezas que quiere añadir: (0000 para salir)
+> 500
+Cantidad de piezas que quiere añadir: (0000 para salir)
+> 300
+Cantidad de piezas que quiere añadir: (0000 para salir)
+> 400
+Cantidad de piezas que quiere añadir: (0000 para salir)
+> 50
+Cantidad de piezas que quiere añadir: (0000 para salir)
+> 30
+Cantidad de piezas que quiere añadir: (0000 para salir)
+> 0000
+Alerta en la producción
+*** Ejecución Finalizada. ***

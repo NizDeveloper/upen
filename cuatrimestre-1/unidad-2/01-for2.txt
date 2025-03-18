@@ -1,0 +1,87 @@
+Una zapatera necesita registrar los datos de sus vendedores y los datos de las ventas individuales para calcular algunos estándares de calidad a fin de mejorar la productividad y otorgar bonos, así como "cortar cabezas". 
+
+El sistema debe solicitar el a cuántos vendedores se va a registrar su información y de cada vendedor debe solicitar cuántas ventas realizó y de cuánto fue el valor de cada una. 
+
+Después de terminar el registro de las ventas, debe mostrar el total de las ventas de ese vendedor, el número de ventas que hizo y su venta más alta. Si la venta más alta es menor a $100 o el total es menor de $1,500, debe mostrar un mensaje de que pase a Recursos Humanos. 
+
+El reporte final debe entregar un reporte de cuántos vendedores se registraron en el sistema y cuánto fue el total de las ventas globales de la empresa . Si el reporte global es mayor a $20,000 deberá mostrar un mensaje de que se alcanzó la meta , de lo contrario mostrará un mensaje que habrá que convocar una reunión .
+
+-------------------------------------------
+
+Algoritmo for2
+	vma = 0
+	
+	Escribir " a cuántos vendedores se va a registrar su información: "
+	Leer n
+	
+	Para i <- 1 Hasta n Hacer
+        Escribir "solicitar cuántas ventas realizó el trabajador ", i
+		Leer m
+		
+		Para j = 1 hasta m Hacer
+			Escribir "ingresar cantidad ", j, ": "
+			Leer cant
+			
+			ventot = cant + ventot
+			
+			si cant > vma Entonces
+				vma = cant
+			FinSi
+		FinPara
+		
+		Escribir " reporte del vendedor ", i, ": "
+		Escribir " el total de las ventas es de: ", ventot
+		Escribir " el número de ventas que hizo es de: ", m
+		Escribir " su venta mas alta es:", vma
+		
+		si m < 100 O ventot < 1500 Entonces
+            Escribir "El vendedor ", i, " debe pasar a Recursos Humanos."
+        FinSi
+		
+		vf = ventot + vf
+		ventot = 0
+    FinPara
+	
+	Escribir "se registraron ", n, " vendedores en el sistema"
+	Escribir "ventas globales ", vf
+	
+	si vf < 20000 Entonces
+		Escribir "habrá que convocar una reunión"
+	SiNo
+		Escribir "se alcanzo la meta !!! "
+	FinSi
+FinAlgoritmo
+
+--------------------------------------------------
+
+*** Ejecución Iniciada. ***
+ a cuántos vendedores se va a registrar su información:
+> 2
+solicitar cuántas ventas realizó el trabajador 1
+> 3
+ingresar cantidad 1:
+> 5000
+ingresar cantidad 2:
+> 4000
+ingresar cantidad 3:
+> 5000
+ reporte del vendedor 1:
+ el total de las ventas es de: 14000
+ el número de ventas que hizo es de: 3
+ su venta mas alta es:5000
+El vendedor 1 debe pasar a Recursos Humanos.
+solicitar cuántas ventas realizó el trabajador 2
+> 2
+ingresar cantidad 1:
+> 10000
+ingresar cantidad 2:
+> 4000
+ reporte del vendedor 2:
+ el total de las ventas es de: 14000
+ el número de ventas que hizo es de: 2
+ su venta mas alta es:10000
+El vendedor 2 debe pasar a Recursos Humanos.
+se registraron 2 vendedores en el sistema
+ventas globales 28000
+se alcanzo la meta !!!
+*** Ejecución Finalizada. ***

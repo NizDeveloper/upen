@@ -1,0 +1,154 @@
+El programador sigue teniendo complicaciones para ajustar su código cuando ingresan valores, pero necesita ayuda, ahora su jefe, que no conoce mucho de programación, quiere un programa para calcular los rendimientos de 4 vendedores y ver la diferencia entre estos.
+
+El programa debe recibir los 4 valores de los vendedores, que se calcula en ventas por mes, después, el programa debe ordenarlos de menor a mayor, siendo 4 el mayor y 1 el menor, una vez hecho esto debe hacer las siguientes operaciones.
+
+Mostrar los números ordenados
+El resultado del 4 menos el 1
+El resultado del 2 menos el 1
+El resultado del 4 menos el 3
+El resultado del 3 menos el 2
+La suma de todas las ventas y el promedio general
+
+-----------------------------------------------------
+
+Algoritmo if4
+    Escribir "Ingrese el valor de ventas del vendedor 1"
+    Leer v1
+    
+    Escribir "Ingrese el valor de ventas del vendedor 2"
+    Leer v2
+    
+    Escribir "Ingrese el valor de ventas del vendedor 3"
+    Leer v3
+    
+    Escribir "Ingrese el valor de ventas del vendedor 4"
+    Leer v4
+    
+    Mostrar "El orden de los vendedores es:"
+    
+    si v1 < v2 Y v1 < v3 Y v1 < v4 Entonces
+        Mostrar "Vendedor 1: ", v1
+        
+        si v2 < v3 Y v2 < v4 Entonces
+            Mostrar "Vendedor 2: ", v2
+            
+            si v3 < v4 Entonces
+                Mostrar "Vendedor 3: ", v3
+                Mostrar "Vendedor 4: ", v4
+            SiNo
+                Mostrar "Vendedor 4: ", v4
+                Mostrar "Vendedor 3: ", v3
+            FinSi
+        SiNo
+            si v3 < v4 Entonces
+                Mostrar "Vendedor 3: ", v3
+                Mostrar "Vendedor 4: ", v4
+            SiNo
+                Mostrar "Vendedor 4: ", v4
+                Mostrar "Vendedor 3: ", v3
+            FinSi
+        FinSi
+    SiNo
+        si v2 < v1 Y v2 < v3 Y v2 < v4 Entonces
+            Mostrar "Vendedor 2: ", v2
+            
+            si v1 < v3 Y v1 < v4 Entonces
+                Mostrar "Vendedor 1: ", v1
+                
+                si v3 < v4 Entonces
+                    Mostrar "Vendedor 3: ", v3
+                    Mostrar "Vendedor 4: ", v4
+                SiNo
+                    Mostrar "Vendedor 4: ", v4
+                    Mostrar "Vendedor 3: ", v3
+                FinSi
+            SiNo
+                si v3 < v4 Entonces
+                    Mostrar "Vendedor 3: ", v3
+                    Mostrar "Vendedor 4: ", v4
+                SiNo
+                    Mostrar "Vendedor 4: ", v4
+                    Mostrar "Vendedor 3: ", v3
+                FinSi
+            FinSi
+        SiNo
+            si v3 < v1 Y v3 < v2 Y v3 < v4 Entonces
+                Mostrar "Vendedor 3: ", v3
+                
+                si v1 < v2 Entonces
+                    Mostrar "Vendedor 1: ", v1
+                    Mostrar "Vendedor 2: ", v2
+                SiNo
+                    Mostrar "Vendedor 2: ", v2
+                    Mostrar "Vendedor 1: ", v1
+                FinSi
+                
+                si v4 < v2 Entonces
+                    Mostrar "Vendedor 4: ", v4
+                SiNo
+                    Mostrar "Vendedor 2: ", v2
+                FinSi
+            SiNo
+                si v4 < v1 Y v4 < v2 Y v4 < v3 Entonces
+                    Mostrar "Vendedor 4: ", v4
+                    
+                    si v1 < v2 Entonces
+                        Mostrar "Vendedor 1: ", v1
+                        Mostrar "Vendedor 2: ", v2
+                    SiNo
+                        Mostrar "Vendedor 2: ", v2
+                        Mostrar "Vendedor 1: ", v1
+                    FinSi
+                    
+                    si v3 < v1 Entonces
+                        Mostrar "Vendedor 3: ", v3
+                    SiNo
+                        Mostrar "Vendedor 1: ", v1
+                    FinSi
+                SiNo
+                    Mostrar "Vendedor 1: ", v1
+                    Mostrar "Vendedor 2: ", v2
+                    Mostrar "Vendedor 3: ", v3
+                FinSi
+            FinSi
+        FinSi
+    FinSi
+    
+    Mostrar "Resultado de 4 menos 1: ", v4 - v1
+    Mostrar "Resultado de 2 menos 1: ", v2 - v1
+    Mostrar "Resultado de 4 menos 3: ", v4 - v3
+    Mostrar "Resultado de 3 menos 2: ", v3 - v2
+    
+    suma = v1 + v2 + v3 + v4
+	
+    promedio = suma / 4
+	
+	
+    Mostrar "La suma de todas las ventas es: ", suma
+	
+    Mostrar "El promedio de las ventas es: ", promedio
+FinAlgoritmo
+
+-------------------------------------
+
+*** Ejecución Iniciada. ***
+Ingrese el valor de ventas del vendedor 1
+> 5000
+Ingrese el valor de ventas del vendedor 2
+> 4000
+Ingrese el valor de ventas del vendedor 3
+> 6000
+Ingrese el valor de ventas del vendedor 4
+> 3000
+El orden de los vendedores es:
+Vendedor 4: 3000
+Vendedor 2: 4000
+Vendedor 1: 5000
+Vendedor 3: 6000
+Resultado de 4 menos 1: -2000
+Resultado de 2 menos 1: -1000
+Resultado de 4 menos 3: -3000
+Resultado de 3 menos 2: 2000
+La suma de todas las ventas es: 18000
+El promedio de las ventas es: 4500
+*** Ejecución Finalizada. ***

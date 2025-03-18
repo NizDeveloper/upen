@@ -1,0 +1,117 @@
+La abarrotera "Kamarena" necesita trabajar en un sistema que le ayude a registrar de manera fácil y rápida todos sus pedidos, hubo una explosión en el mercado al otro lado de la ciudad y ellos han quedado como el único lugar disponible para comprar, esa idea de poner una bomba ha salido terriblemente bien (no hubo ningún herido).
+
+Mientras el dueño sigue luchando entre entregarse a las autoridades por lo sucedido y pedir perdón a las familias involucradas, ha pedido a su asesor externo, el "Teclas" que le ayude con un sistema.
+
+Para ingresar al sistema debe pedir una contraseña (Mientras), que debe ser una fecha de nacimiento en formato YYYY-MM-DD, una vez en el sistema, debe preguntar si (Si) quiere hacer registros de zanahorias o de tomates.
+
+Si elige zanahorias, deberá pedir que se ingresen cuántas cajas deberá ingresar (Para), como cada caja tiene un valor diferente, habrá que ingresarlo manualmente una por una.
+
+Si elige tomates, deberá ingresar cuantas cajas se necesiten y cuando escriba el número 100001 deberá terminar de registrar (Mientras).
+
+En ambos casos, deberá qué opción se eligió y mostrar cuántas cajas se añadieron, cuánto fue el total del peso y cuánto fue el costo total de esa venta, las zanahorias cuestan $15.84 el kilo y los tomates cuestan $11.34 el kilo, si (Si) la venta supera los $10,000, se le hará un descuento automático del 7.5% del valor total.
+
+Finalmente, deberá preguntar si (Si) el cliente necesita o no envío, si requiere envío deberá añadir $150 más a su pedido, de lo contrario, mostrará el precio anterior.
+
+----------------------------------------
+
+Algoritmo while_2
+	Escribir "Ingrese la contraseña"
+	leer contraseña
+	
+	// 2006-07-25
+	Mientras contraseña <> "x" Hacer
+		Escribir "Ingrese la contraseña"
+		leer contraseña
+	FinMientras
+	
+	Escribir "Quiere hacer registros de zanahorias o tomates?"
+	Escribir "Zanahorias = 0       Tomates = 1"
+	leer registro
+	
+	Mientras registro <> 0 Y registro <> 1 Hacer
+		Escribir "Numero incorrecto"
+		Escribir "Zanahorias = 0       Tomates = 1"
+		leer registro
+	FinMientras
+	
+	// Zanahorias
+	si registro == 0 Entonces
+		Escribir "Cuantas cajas va a registrar?"
+		leer cajas
+		
+		Para i = 1 Hasta cajas
+			Mostrar "Peso de la caja ", i
+			leer peso
+			
+			peso_total = peso_total + peso
+		Fin Para
+		
+		objeto = "Zanahorias"
+	FinSi
+	
+	// Tomates
+	si registro == 1 Entonces
+		Escribir "Cuantas cajas va a registrar?"
+		leer cajas
+		
+		si cajas <> 100001 Entonces
+			Para i = 1 Hasta cajas
+				Mostrar "Peso de la caja ", i
+				leer peso
+				peso_total = peso_total + peso
+			Fin Para
+		SiNo
+			Escribir "No se registró ninguna caja"
+		FinSi
+		
+		objeto = "Tomates"
+	FinSi
+	
+	Escribir "Se eligió registrar ", objeto
+	
+	si objeto == "Zanahorias" Entonces
+		precio = peso_total * 15.84
+	FinSi
+	
+	si objeto == "Tomates" Entonces
+		precio = peso_total * 11.34
+	FinSi
+	
+	Escribir "el precio es de $", precio
+	
+	si precio > 10000 Entonces
+		Escribir "El descuento es de: $", ((precio * 0.075) + precio)
+	FinSi
+	
+	Escribir "El cliente necesita envio?"
+	Escribir "Si = 0      No = 1"
+	Leer envio
+	
+	si envio == 0 Entonces
+		Escribir "El precio final es de: $", ((precio * 0.075) + precio + 150)
+	FinSi
+FinAlgoritmo
+
+---------------------------------------------
+
+*** Ejecución Iniciada. ***
+Ingrese la contraseña
+> x
+Quiere hacer registros de zanahorias o tomates?
+Zanahorias = 0       Tomates = 1
+> 0
+Cuantas cajas va a registrar?
+> 3
+Peso de la caja 1
+> 50
+Peso de la caja 2
+> 30
+Peso de la caja 3
+> 100
+Se eligió registrar Zanahorias
+el precio es de $2851.2
+El cliente necesita envio?
+Si = 0      No = 1
+> 0
+El precio final es de: $3215.04
+*** Ejecución Finalizada. ***

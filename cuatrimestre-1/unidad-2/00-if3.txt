@@ -1,0 +1,52 @@
+El banco donde trabaja la Lic. Petra, ahora tiene un nuevo sistema para revisar el historial, y permite identificar más rápidamente los datos para un prospecto a crédito.
+
+En el nuevo sistema, ahora solo hay que ingresar la edad del prospecto, sus años trabajados y su ingreso actual y ahora el algoritmo trabajará de la siguiente manera.
+
+Si la edad es mayor a 18, los años mayor a 5 y el ingreso mayor a $5,000.00, deberá mostrar un mensaje que es su crédito será en el rango de los $10,000 a $15,000.
+
+Por otro lado, si la edad es mayor a 35, los años mayor a 10 años y el ingreso mayor a $10,000, deberá mostrar un mensaje que el rango del crédito será de los $25,000 a los $30,000.
+
+Si la edad es mayor a 60, los años mayor a 20 y el ingreso mayor a $20,000, deberá mostrar un mensaje que el rango de crédito será de los $50,000 a los $100,000.
+
+Si alguno de los rangos de edad, años de trabajo o ingreso no coincide, deberá simplemente mostrar un mensaje que necesita contactar a un asesor.
+
+--------------------------------------------------
+
+Algoritmo if3
+	Escribir "ingrese la edad"
+	Leer edad
+	
+	Escribir  "ingresa los años de trabajo"
+	Leer años_trabajados
+	
+	Escribir "ingresa el ingreso actual"
+	Leer ingreso
+	
+	si edad >= 18 y  años_trabajados > 5 y ingreso > 5000 Entonces
+		mensaje = "El credito sera de $10,000 a los $15,000"
+		
+		si edad > 35 y años_trabajados > 10 y ingreso > 10000 Entonces
+			mensaje = "El credito sera de $25,000 a los $30,000"
+			
+			si edad > 60 y años_trabajados > 20 y ingreso > 20000 Entonces
+				mensaje =  "El credito sera de los $50,000 a los $ 100,000"
+			FinSi
+		FinSi
+	SiNo
+		Escribir "Nesecita contactar con el asesor"
+	FinSi	
+	
+	Mostrar mensaje 
+FinAlgoritmo
+
+-------------------------------------------------------
+
+*** Ejecución Iniciada. ***
+ingrese la edad
+> 20
+ingresa los años de trabajo
+> 15
+ingresa el ingreso actual
+> 50000
+El credito sera de $10,000 a los $15,000
+*** Ejecución Finalizada. ***
