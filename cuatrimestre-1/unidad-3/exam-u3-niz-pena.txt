@@ -1,0 +1,87 @@
+// Declaración de funciones
+SubAlgoritmo salarioBruto(h, t, length Por Referencia, salBru Por Referencia)
+	salBru = h * t
+	
+	length = Longitud(" El salario bruto es de: $" + ConvertirATexto(salBru))
+	
+	tabla(length)
+	Escribir "| El salario bruto es de: $", salBru
+	tabla(length)
+FinSubAlgoritmo
+
+
+SubAlgoritmo descuentoImpuesto(h, t, imp, sal_imp Por Referencia, length)
+	sal_imp = (h * t) * imp
+	
+	escribir "| Impuestos de:           $", sal_imp
+	tabla(length)
+FinSubAlgoritmo
+
+
+SubAlgoritmo descuentoSeguridad(h, t, segSoc, seguro Por Referencia, length)
+	seguro = (h * t) * segSoc
+	
+	Mostrar "| Costo seguro social:    $", seguro
+	tabla(length)
+FinSubAlgoritmo
+
+
+SubAlgoritmo salarioNeto(sb, saim, seg, length)
+	salario = sb - saim - seg
+	
+	Escribir "| El salario neto es de:  $", salario
+	tabla(length)
+FinSubAlgoritmo
+
+SubAlgoritmo tabla(length)
+    tablaStr = "+"
+    
+    Para i = 0 Hasta length
+        tablaStr = tablaStr + "-"
+    Fin Para
+    
+    Mostrar tablaStr, "+"
+FinSubAlgoritmo
+
+
+Algoritmo examen
+	impuestos       = .15
+	seguridadSocial = .10
+	length          = 0
+	salBru          = 0
+	salImp          = 0
+	seguro          = 0
+	
+	Escribir "Numero de horas trabajadas:"
+	Leer horasTrabajadas
+	
+	Escribir "Valor de la tarifa? (tarifa por hora)"
+	Leer tarifaHora
+	
+	// Llamadas a las funciones
+	salarioBruto(horasTrabajadas, tarifaHora, length, salBru)
+	
+	descuentoImpuesto(horasTrabajadas, tarifaHora, impuestos,salImp, length)
+	
+	descuentoSeguridad(horasTrabajadas, tarifaHora, seguridadSocial, seguro, length)
+	
+	salarioNeto(salBru, salImp, seguro, length)
+FinAlgoritmo
+
+--------------------------------------------------------------------------------------------------------
+
+*** Ejecución Iniciada. ***
+Numero de horas trabajadas:
+> 5
+Valor de la tarifa? (tarifa por hora)
+> 5
++------------------------------+
+| El salario bruto es de:  $25 |
++------------------------------+
+| Impuestos de:          $3.75 |
++------------------------------+
+| Costo seguro social:    $2.5 |
++------------------------------+
+| El salario neto es de: $18.75|
++------------------------------+
+*** Ejecución Finalizada. ***
